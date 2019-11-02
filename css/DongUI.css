@@ -1,0 +1,513 @@
+/*
+全局样式
+删除页面默认样式
+*/
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    list-style: none;
+    user-select:none;
+    font-family: "微软雅黑 Light";
+}
+.DPage a,a:link{
+    text-decoration:none;
+    position:relative;
+    color: #5b5b5b;
+    padding: 5px;
+    cursor: pointer;
+}
+.DPage a:after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background: rgba(255,255,255,0.7);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transition: all .2s;
+}
+.DPage a:hover:after,a.selected:after{
+    left: 0%;
+    width: 100%;
+    cursor: pointer;
+}
+.dong-ui h1,h2,h3,h4,h5,h6{
+    float: left;
+    font-weight:normal;
+    color: #5b5b5b;
+}
+
+/*!*设置全局滚动条样式*!*/
+/**::-webkit-scrollbar {*/
+    /*width: 3px;*/
+/*}*/
+/**::-webkit-scrollbar-track {*/
+    /*background-color: rgba(0,0,0,0);*/
+/*}*/
+/**::-webkit-scrollbar-thumb {*/
+    /*background-color: #f15431;*/
+/*}*/
+/*页面默认背景颜色*/
+body{
+    background-color: #efefef;
+}
+/*页面主体结构分为：DHeader/DBody/DFooter*/
+.DHeader{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    float: left;
+    box-shadow:-1px 2px 16px #8A8A8A;
+    z-index: 98;
+    background-color: white;
+}
+/*头部菜单固定样式*/
+.DHeader-Menu{
+    float: left;
+    display: inline-block;
+    position: absolute;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 280px;
+}
+.DHeader-Menu-Item{
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    float: left;
+}
+
+.DBody{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 70px;
+    height: inherit;
+    float: left;
+}
+.DFooter{
+    width:100%;
+    height: 200px;
+    margin-top: 50px;
+    float: left;
+}
+/*侧边栏设计，空的侧边栏结构分为标题和具体内容，具体内容可以自己添加项目，推荐使用UL列表，同时元素样式的长度是自适应的*/
+/*在侧边栏外有固定的打开按钮*/
+/*固定的关闭按钮在侧边栏内部*/
+/*具体操作控制由DongUI.js编写*/
+.DSliderBar-Open{
+    width: 30px;
+    height: 60px;
+    border-radius: 0 40px 40px 0;
+    position: fixed;
+    background-color: #f15431;
+    text-align: center;
+    line-height: 60px;
+    font-size: 25px;
+    color: white;
+    transition: all 0.5s;
+    z-index: 99;
+    box-shadow: 0px 0px 0px;
+}
+.DSliderBar-Open:hover{
+    cursor: pointer;
+    width: 60px;
+}
+.DSliderBar{
+    display: inline-block;
+    position: fixed;
+    width: 0px;
+    height: 100%;
+    background-color: white;
+    z-index: 99;
+    box-shadow:6px 1px 20px #707070;
+    overflow: hidden;
+}
+.DSliderBar-Title{
+    float: left;
+    margin-left: 10px;
+    width: calc(100% - 70px);
+    line-height: 60px;
+    font-size: 20px;
+}
+.DSliderBar-Title i{
+    margin-right: 10px;
+    font-size: 25px;
+    color: #f15431;
+}
+.DSliderBar-Content{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow-y: scroll;
+}
+.DSliderBar-Content.Item{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+.DSliderBar-Item:before{
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 0px;
+    background-color: #f15431;
+    float: left;
+    transition: all 0.2s;
+}
+.DSliderBar-Item:hover:before{
+    width: 3px;
+    height: 60px;
+}
+.DSliderBar-Close{
+    width: 30px;
+    height: 60px;
+    border-radius: 40px 0 0 40px;
+    float: right;
+    background-color: #f15431;
+    text-align: center;
+    line-height: 60px;
+    font-size: 25px;
+    color: white;
+    transition: all 0.5s;
+}
+.DSliderBar-Close:hover{
+    width: 60px;
+    cursor: pointer;
+}
+/*
+弹出框，结构分为Title和Content
+Title是固定的样式，包含名称和关闭按钮,关闭按钮需添加class="DPopup-Close"
+Content中的内容可以自定义,不需要Content也可以
+一个页面可以包含多个弹出窗，每个弹出窗的ID自定义
+但自定义打开弹窗按钮中需要填写class="DPopup-Open" 和 data-for("ID名称") 属性
+*/
+.DPopup{
+    display:none;
+    position: fixed;
+    height: 500px;
+    width: 700px;
+    margin-top: 250px;
+    margin-left: calc(50% - 350px);
+    z-index: 101;
+    background-color: white;
+}
+.DPopup-Title{
+    display: inline-block;
+    width: 100%;
+    float: left;
+    height: 30px;
+    background-color: #f15431;
+    color: white;
+}
+.DPopup-Title span{
+    display: inline-block;
+    float: left;
+    line-height: 30px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+.DPopup-Title i{
+    display: inline-block;
+    float: right;
+    line-height: 30px;
+    margin-right: 30px;
+    font-size: 20px;
+}
+.DPopup-Title i:hover{
+    cursor: pointer;
+}
+.DPopup-Content{
+    display: inline-block;
+    width: 100%;
+    height: calc(100% - 30px);
+    background-color: #eeeeee;
+    overflow-y: scroll;
+}
+/*透黑色蒙版，配合弹出窗使用*/
+.DMask{
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(0,0, 0, 0.7);
+}
+/*在Header出显示固定的网站表题*/
+.DHomeTitle{
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    position: fixed;
+    margin-left: calc(50% - 100px);
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+    z-index: 99;
+}
+
+/*
+输入框的样式，宽度适应外部DIV
+inputGroup中设定了输入框和按钮的长宽样式，结构包含了Label和icon<i>和普通文本输入框
+由inputGroup承载显示输入框的选中,class 加selected
+type=text 的样式为白色无边框
+type=password 的样式为白色无边框
+*/
+.DInputGroup{
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    padding: 0px;
+}
+.DInputGroup:after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #f15431;
+    position: absolute;
+    left: 50%;
+    transition: all 0.3s;
+}
+.DInputGroup.selected:after{
+    left: 0%;
+    width: 100%;
+    cursor: pointer;
+}
+.DInputGroup input::placeholder{
+    color: #888888;
+    font-size: 18px;
+}
+/*图标的显示*/
+.DInputGroup i{
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    float: left;
+}
+/*普通输入框的样式，长度为40px，字体大小为20px*/
+.DInputGroup input[type=text]{
+    width: calc(100% - 2px);
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    outline:none;
+    background-color: white;
+}
+.DInputGroup input[type=password]{
+    width: calc(100% - 2px);
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    outline:none;
+    background-color: white;
+}
+/*标签的显示Label*/
+.DInputGroup label{
+    display: inline-block;
+    margin-left: 10px;
+    font-size:18px;
+    float: left;
+}
+/*
+Button样式
+颜色：Blue/Orange/Red/Black/Green
+*/
+.DInputGroup input[type=button]{
+    margin-top: 10px;
+    width: calc(100% - 2px);
+    height: 40px;
+    border: none;
+    font-size: 15px;
+    text-align: center;
+    outline:none;
+    color: white;
+}
+.DInputGroup input[type=button]:hover{
+    cursor: pointer;
+    box-shadow: -1px 5px 20px #777777;
+}
+.Blue{
+    background-color: #1dace6;
+    color: white;
+}
+.Orange{
+    background-color: #f15431;
+    color: white;
+}
+.Red{
+    background-color: #ff5775;
+    color: white;
+}
+.Black{
+    background-color: #3d3d3d;
+    color: white;
+}
+.Green{
+    background-color: #18cf7d;
+    color: white;
+}
+/*
+验证码输入组合DInputGroup Check
+主要结构包含
+CheckFrom(可以是验证码图片也可以是一个发送验证请求的按钮)
+input class="CheckCode" 具体的验证信息
+*/
+.DInputGroup.Check .CheckFrom{
+    float: right;
+    width: 25%;
+    height: 40px;
+}
+.DInputGroup.Check .CheckCode{
+    width: 75%;
+    height: 40px;
+}
+/*
+搜索输入组合DInputGroup-Search
+Search结构分为：搜索图标/文本输入框/搜索按钮
+整个组合的长宽需要父元素定义
+*/
+.DInputGroup.Search{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+    box-shadow:0px 1px 35px #5a5a5a;
+    border-radius: inherit;
+}
+.DInputGroup.Search.selected{
+    box-shadow:0px 1px 35px #f15431;
+}
+.DInputGroup.Search.selected:after{
+    width: 0px;
+}
+.DInputGroup.Search i{
+    float: left;
+    width: 5%;
+    text-align: center;
+    line-height: inherit;
+}
+.DInputGroup.Search input[type="text"]{
+    float: left;
+    height: 100%;
+    width: 90%;
+}
+.DInputGroup.Search input[type="button"]{
+    float: left;
+    height: 100%;
+    width: 5%;
+    margin: 0px;
+    padding: 0px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.DInputGroup.Search input[type="button"]:hover{
+    box-shadow: 0px 0px 0px;
+}
+/*日期选择器*/
+.DInputGroup input[type="date"]{
+    margin-top: 10px;
+    width: calc(100% - 2px);
+    height: 40px;
+    border: none;
+    font-size: 15px;
+    outline:none;
+}
+/*textArea输入*/
+.DInputGroup textarea{
+    width: 100%;
+    height: 300px;
+    font-size: 18px;
+    resize: none;
+    overflow-y: auto;
+    border: none;
+    outline-color: #18cf7d;
+}
+/*
+上传文件输入组合
+DInputGroup Upload
+*/
+.DInputGroup.Upload input[type=file]{
+    width: calc(100% - 2px);
+    height: 40px;
+    outline:none;
+}
+.DInputGroup.Upload input[type=file]:before{
+    content: "选择文件";
+    position: absolute;
+    width: calc(100% - 2px);
+    height: 40px;
+    background-color: inherit;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.2s;
+}
+.DInputGroup.Upload input[type=file]:hover:before{
+    background-color: #15af35;
+}
+progress{
+    width: 100%;
+    height:10px;
+    border-radius: 15px;
+}
+progress::-webkit-progress-bar { background: white; }
+progress::-webkit-progress-value  { background: #15af35; }
+/*待完善*/
+.InputGroup input[type=file]{
+    width: calc(100% - 2px);
+    border: none;
+    font-size: 15px;
+    text-align: center;
+    outline:none;
+    cursor: pointer;
+    color: white;
+}
+.InputGroup input[type=checkbox]{
+    margin-top: 2.5px;
+    margin-left: 5px;
+    border: solid 1px white;
+    width: 30px;
+    height: 30px;
+}
+.dui-horizontal{
+    width: 100%;
+    float: left;
+    height: 400px;
+    background-size:cover;
+}
+/*背景图片，自适应于父元素大小*/
+.DBackground.Img{
+    float: left;
+    z-index: 10;
+    width: 100%;
+    height: inherit;
+}
+/*
+分页器DPage，自适应父元素大小
+两个属性 data-current="5" data-total="15"
+具体的子元素 DPage-Item 子元素配合标签a使用
+初始化具体多少项由js完成
+*/
+.DPage{
+    height: inherit;
+    line-height: inherit;
+    font-size:20px;
+    float: right;
+}
+.DPage i{
+    font-size: 20px;
+}
+.DPage-Item{
+    display: inline-block;
+    width:40px;
+    text-align: center;
+}
+
