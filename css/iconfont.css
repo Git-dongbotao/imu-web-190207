@@ -6,6 +6,15 @@
   url('iconfont.ttf?t=1570125810585') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
   url('iconfont.svg?t=1570125810585#iconfont') format('svg'); /* iOS 4.1- */
 }
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1572680196321'); /* IE9 */
+  src: url('iconfont.eot?t=1572680196321#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPAAAsAAAAACEgAAAN0AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqEKINKATYCJAMMCwgABCAFhG0HPhsYB8iuwG3owVZjK8bVlZ5AMIXbvfgTZidMBhQP/B9774v/l2EbReIw8vgoEtcCmTiCjaNBB9ICmxiXL1zndSrE/1CYBYfGBHFbhup2He67WtMwjV+VuMunQAoA9NPePd/P/iYFcqpW1cjqTn36ub0/lba+UEjW1kYJVqGROKJZZ4SKhyJWqYRKVvmowqUCOvPbO6Brb9wf904bS3A+oFzmHtQFGAcU6FiDPlkBJcgNY1dexGkCyrWiAU4cnt/najJjUkDY9JWVq6U0ck1+UCoolqzMCFfglcYWswNw6X8//OGEgKiQYMycXD5wc9ufHBbZLVqUcFHgjmcCW0dCH4BMWCq1zCiGkT5g5YqkVJ9elAVxLD+l+BxVVDT/8IgCoQgjtxJ0oWjkE5sTS4W8s+be3PgianALgHdR0ThSaao0NF1WZdlVKpbxyFvrZhY78PXVMn4Ut04G+FKPqBf7uF7bkq96CLfmq+LJiAhVaY73xK3FRcYh0VUHUGznsVf5tV6xE2tbByVu1Wi9UOQhoouuhEsEYu1gr94GYKtBtL9bBFIayDsnIwDZGqPNzhSI7WGaXYc1h0wEp/3FoMc05M53P3/7DZCdMf6sAIRr0LvEeASAkaNP3VepfK3hz64TG6+PtpJ4ezZxFq6fho5m0CzhtGTCOlh+7Jl4fxqcI3MgKTsKdYnB/+uh4zH1T03VGfAAd008uY192em/U8P8crbtr1IT6Vesgz06us3zTcUtj7JrsZ73yGSE03P8wLbHePy7v7G3WT2lzYGb1OQAH99xUJO1j5aKMO6/5LbsyCrf0KYsc2yObkv235YpAlnc7p/hqPfS39YEEJuCUs6FEJVogaRUGzrj+6CgQj8UlRqGcr1E6ys0cCgKWQY90gCCWiOIqt1BUusanfHPUNDsA4pqA0O5qdCwY4WO9I1xQovRBcUL6B2dSEvPjSD/FtU8sijJ98mPSJnvB7YwsvEjTJDGmONcqCUXS9CQjkEIzsMo0mAjHaDDQsecbjGnsgwhodRxrmEcQRaGXEDhBdBzaAnp9maN3OdvIWUuYqGatgrjI0Qy/uCAjYHVAn0kSVq1Xcs7TgvKEhcmAQ2ixYAQmFBkRjRgKx8WQA4m6HqEUluYqJumrUTML4ufbx+UM8pTYAhLOFSc+sIM2WBvrlSUlu9aSS4H') format('woff2'),
+  url('iconfont.woff?t=1572680196321') format('woff'),
+  url('iconfont.ttf?t=1572680196321') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1572680196321#iconfont') format('svg'); /* iOS 4.1- */
+}
+
 
 .iconfont {
   font-family: "iconfont" !important;
@@ -123,3 +132,6 @@
   content: "\e502";
 }
 
+.icon-caidan:before {
+  content: "\e601";
+}

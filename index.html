@@ -4,15 +4,129 @@
     <meta charset="UTF-8">
     <title>Enjoy Your Foods</title>
     <link rel="Shortcut Icon" href="./favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/dong-ui.css">
     <link rel="stylesheet" href="css/DongUI.css">
-    <script src="js/common/jquery.min.js"></script>
-    <script src="js/common/bootstrap.min.js"></script>
-    <script src="js/common/bootstrap.bundle.min.js"></script>
-    <script src="js/common/DongUI.js"></script>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
-<body>
 
+<body>
+    <div class="DMask"></div>
+    <div class="DPopup" id="LoginPanel">
+        <div class="DPopup-Title">
+            <span>登录</span>
+            <i class="iconfont icon-close_icon DPopup-Close"></i>
+        </div>
+        <div class="DPopup-Content">
+            <div class="DInputGroup">
+                <i class="iconfont icon-yonghu"></i>
+                <input id="username" type="text" PLACEHOLDER="用户名">
+            </div>
+            <div class="DInputGroup">
+                <i class="iconfont icon-mima"></i>
+                <input id="password" type="password" PLACEHOLDER="密码">
+            </div>
+            <div class="DInputGroup Check">
+                <i class="iconfont icon-mima"></i>
+                <img class="CheckFrom" src="../img/pdf/checkCode.jpg"/>
+                <input class="CheckCode" id="checkCode" type="text"  PLACEHOLDER="验证码">
+            </div>
+            <div class="DInputGroup">
+                <input id="Login" type="button" class="Orange" value="登录">
+            </div>
+            <div class="DInputGroup">
+                <a href="#">忘记密码？</a>
+            </div>
+        </div>
+    </div>
+    <div class="DPopup" id="RegisterPanel">
+    <div class="DPopup-Title">
+        <span>注册</span>
+        <i class="iconfont icon-close_icon DPopup-Close"></i>
+    </div>
+    <div class="DPopup-Content">
+        <div class="DInputGroup">
+            <i class="iconfont icon-yonghu"></i>
+            <input id="newUsername" type="text" PLACEHOLDER="用户名（邮箱/电话）">
+        </div>
+        <div class="DInputGroup">
+            <i class="iconfont icon-yonghu"></i>
+            <input id="newName" type="text" PLACEHOLDER="昵称">
+        </div>
+        <div class="DInputGroup">
+            <i class="iconfont icon-mima"></i>
+            <input id="newPassword1" type="password" PLACEHOLDER="密码（8位以上字母与数字组合）">
+        </div>
+        <div class="DInputGroup">
+            <i class="iconfont icon-mima"></i>
+            <input id="newPassword2" type="password" PLACEHOLDER="再次输入密码">
+        </div>
+        <div class="DInputGroup">
+            <input id="Register" type="button" class="Orange" value="注册">
+        </div>
+    </div>
+</div>
+
+    <div class="container-fluid dui header bg-transparent">
+        <div class="row">
+            <div class="col-sm-1">
+                <div class="dropdown">
+                    <img class="dui header-logo dropdown" data-toggle="dropdown" src="favicon.ico"/>
+                    <ul class="dropdown-menu bg-dark">
+                        <li class="dropdown-item"><a href="">home</a></li>
+                        <li class="dropdown-item"><a href="">home</a></li>
+                        <li class="dropdown-item"><a href="">home</a></li>
+                        <li class="dropdown-item"><a href="">home</a></li>
+                        <li class="dropdown-item"><a href="">home</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <ul class="dui header-navigation">
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <img src="./images/user-heading/default_user.jpg" class="dui-img-user dropdown float-right" data-toggle="dropdown" id="CurrentUserImg"/>
+                <ul class="dropdown-menu bg-dark">
+                    <li class="dropdown-item"><a href="">我的订单</a></li>
+                    <li class="dropdown-item"><a href="">我的地址</a></li>
+                    <li class="dropdown-item"><a href="">我的购物袋</a></li>
+                    <li class="dropdown-item"><a href="">我的消息</a></li>
+                    <li class="dropdown-item"><a href="">联系客服</a></li>
+                </ul>
+                <div class="float-right" id="CurrentUserOperateG">
+                    <a href="#" class="DPopup-Open" data-for="LoginPanel" data-toggle="modal" data-target="#myModal">登录</a>
+                    <a href="#" class="DPopup-Open" data-for="RegisterPanel">注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid dui body">
+        <div class="dui-fullscreen" style="background-image: url('images/background/bg2.jpg')">
+        </div>
+
+        <div class="dui-fullscreen">
+        </div>
+
+        <div class="dui-fullscreen">
+        </div>
+
+    </div>
+
+    <div class="container-fluid DFooter">
+
+    </div>
 </body>
+<script src="js/common/jquery.min.js"></script>
+<script src="js/common/bootstrap.bundle.min.js"></script>
+<script src="js/common/bootstrap.min.js"></script>
+<script src="js/common/DongUI.js"></script>
 </html>

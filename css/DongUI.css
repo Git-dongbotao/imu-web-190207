@@ -38,16 +38,16 @@
     color: #5b5b5b;
 }
 
-/*!*设置全局滚动条样式*!*/
-/**::-webkit-scrollbar {*/
-    /*width: 3px;*/
-/*}*/
-/**::-webkit-scrollbar-track {*/
-    /*background-color: rgba(0,0,0,0);*/
-/*}*/
-/**::-webkit-scrollbar-thumb {*/
-    /*background-color: #f15431;*/
-/*}*/
+/*设置全局滚动条样式*/
+*::-webkit-scrollbar {
+    width: 3px;
+}
+*::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0);
+}
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(129, 130, 133, 0.76);
+}
 /*页面默认背景颜色*/
 body{
     background-color: #efefef;
@@ -194,15 +194,21 @@ Content中的内容可以自定义,不需要Content也可以
     margin-top: 250px;
     margin-left: calc(50% - 350px);
     z-index: 101;
-    background-color: white;
+}
+.DPopup:before{
+    content: "";
+    -webkit-filter:blur(20px);
+    filter:blur(20px);
 }
 .DPopup-Title{
     display: inline-block;
     width: 100%;
     float: left;
     height: 30px;
-    background-color: #f15431;
+    background-color: rgba(241, 84, 49, 0.79);
     color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 .DPopup-Title span{
     display: inline-block;
@@ -225,8 +231,10 @@ Content中的内容可以自定义,不需要Content也可以
     display: inline-block;
     width: 100%;
     height: calc(100% - 30px);
-    background-color: #eeeeee;
+    background-color: rgb(245, 245, 245);
     overflow-y: scroll;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 /*透黑色蒙版，配合弹出窗使用*/
 .DMask{
@@ -235,7 +243,7 @@ Content中的内容可以自定义,不需要Content也可以
     height: 100%;
     width: 100%;
     z-index: 100;
-    background-color: rgba(0,0, 0, 0.7);
+    background-color: rgba(0,0, 0, 0.3);
 }
 /*在Header出显示固定的网站表题*/
 .DHomeTitle{
@@ -268,7 +276,7 @@ type=password 的样式为白色无边框
     content: "";
     width: 0;
     height: 2px;
-    background: #f15431;
+    background-color: rgba(241, 84, 49, 0.79);
     position: absolute;
     left: 50%;
     transition: all 0.3s;
@@ -279,7 +287,7 @@ type=password 的样式为白色无边框
     cursor: pointer;
 }
 .DInputGroup input::placeholder{
-    color: #888888;
+    font-style: italic;
     font-size: 18px;
 }
 /*图标的显示*/
@@ -296,7 +304,8 @@ type=password 的样式为白色无边框
     border: none;
     font-size: 20px;
     outline:none;
-    background-color: white;
+    background-color: rgba(0,0,0,0);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 .DInputGroup input[type=password]{
     width: calc(100% - 2px);
@@ -304,7 +313,8 @@ type=password 的样式为白色无边框
     border: none;
     font-size: 20px;
     outline:none;
-    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0);
 }
 /*标签的显示Label*/
 .DInputGroup label{
