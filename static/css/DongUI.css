@@ -186,19 +186,28 @@ Content中的内容可以自定义,不需要Content也可以
 一个页面可以包含多个弹出窗，每个弹出窗的ID自定义
 但自定义打开弹窗按钮中需要填写class="DPopup-Open" 和 data-for("ID名称") 属性
 */
-.DPopup{
-    display:none;
-    position: fixed;
-    height: 500px;
-    width: 700px;
-    margin-top: 250px;
-    margin-left: calc(50% - 350px);
-    z-index: 101;
+@media (max-width: 768px) {
+    .DPopup{
+        display: none;
+        position: fixed;
+        float: left;
+        width:375px;
+        height:812px ;
+        margin-left: 0px;
+        margin-top: 0px;
+        z-index: 120;
+    }
 }
-.DPopup:before{
-    content: "";
-    -webkit-filter:blur(20px);
-    filter:blur(20px);
+@media (min-width: 769px) {
+    .DPopup{
+        display:none;
+        position: fixed;
+        height: 500px;
+        width: 700px;
+        margin-top: 10%;
+        margin-left: calc(50% - 350px);
+        z-index: 120;
+    }
 }
 .DPopup-Title{
     display: inline-block;
