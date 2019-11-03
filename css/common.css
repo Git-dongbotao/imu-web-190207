@@ -1,3 +1,44 @@
 #CurrentUserOperateG{
     line-height: 60px;
 }
+.col-center-block {
+    position: absolute;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+}
+.card{
+    background-color: rgba(0,0,0,0);
+}
+.restaurant-list .card{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 0px;
+    background-color: white;
+    cursor: pointer;
+}
+.restaurant-list .card:hover{
+    box-shadow:-1px 2px 16px #8A8A8A;
+}
+.restaurant-list .card img{
+    width: 50%;
+    float: left;
+}
+
+.restaurant-info{
+    float: left;
+    width: 50%;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+.restaurant-name{
+    font-size: 20px;
+}
+.restaurant-address{
+    font-size: 13px;
+    font-style: italic;
+}
+.restaurant-star li{
+    float: left;
+    color: #7EC6D9;
+}

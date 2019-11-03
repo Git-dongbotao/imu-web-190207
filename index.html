@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Enjoy Your Foods</title>
+    <title>属于你的味道</title>
     <link rel="Shortcut Icon" href="./favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -22,6 +22,14 @@
         <div class="DPopup-Content">
             <div class="DInputGroup">
                 <i class="iconfont icon-yonghu"></i>
+                <select id="UserRole">
+                    <option value="1">用户</option>
+                    <option value="2">商家</option>
+                    <option value="3">配送员</option>
+                </select>
+            </div>
+            <div class="DInputGroup">
+                <i class="iconfont icon-yonghu"></i>
                 <input id="username" type="text" PLACEHOLDER="用户名">
             </div>
             <div class="DInputGroup">
@@ -34,7 +42,7 @@
                 <input class="CheckCode" id="checkCode" type="text"  PLACEHOLDER="验证码">
             </div>
             <div class="DInputGroup">
-                <input id="Login" type="button" class="Orange" value="登录">
+                <input id="Login" type="button" class="LightBlue" value="登录">
             </div>
             <div class="DInputGroup">
                 <a href="#">忘记密码？</a>
@@ -56,6 +64,14 @@
             <input id="newName" type="text" PLACEHOLDER="昵称">
         </div>
         <div class="DInputGroup">
+            <i class="iconfont icon-yonghu"></i>
+            <select id="newUserType">
+                <option value="1">用户</option>
+                <option value="2">商家</option>
+                <option value="3">配送员</option>
+            </select>
+        </div>
+        <div class="DInputGroup">
             <i class="iconfont icon-mima"></i>
             <input id="newPassword1" type="password" PLACEHOLDER="密码（8位以上字母与数字组合）">
         </div>
@@ -64,7 +80,7 @@
             <input id="newPassword2" type="password" PLACEHOLDER="再次输入密码">
         </div>
         <div class="DInputGroup">
-            <input id="Register" type="button" class="Orange" value="注册">
+            <input id="Register" type="button" class="LightBlue" value="注册">
         </div>
     </div>
 </div>
@@ -75,31 +91,31 @@
                 <div class="dropdown">
                     <img class="dui header-logo dropdown" data-toggle="dropdown" src="favicon.ico"/>
                     <ul class="dropdown-menu bg-dark">
-                        <li class="dropdown-item"><a href="">home</a></li>
-                        <li class="dropdown-item"><a href="">home</a></li>
-                        <li class="dropdown-item"><a href="">home</a></li>
-                        <li class="dropdown-item"><a href="">home</a></li>
-                        <li class="dropdown-item"><a href="">home</a></li>
+                        <li><a href="" class="selected">首页</a></li>
+                        <li><a href="">发现美味</a></li>
+                        <li><a href="">我的订单</a></li>
+                        <li><a href="">我要开店</a></li>
+                        <li><a href="">我要配送</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-sm-9">
                 <ul class="dui header-navigation">
-                    <li><a href="">home</a></li>
-                    <li><a href="">home</a></li>
-                    <li><a href="">home</a></li>
-                    <li><a href="">home</a></li>
-                    <li><a href="">home</a></li>
+                    <li><a href="" class="selected">首页</a></li>
+                    <li><a href="">发现美味</a></li>
+                    <li><a href="">我的订单</a></li>
+                    <li><a href="">我要开店</a></li>
+                    <li><a href="">我要配送</a></li>
                 </ul>
             </div>
             <div class="col-sm-2">
                 <img src="./images/user-heading/default_user.jpg" class="dui-img-user dropdown float-right" data-toggle="dropdown" id="CurrentUserImg"/>
                 <ul class="dropdown-menu bg-dark">
-                    <li class="dropdown-item"><a href="">我的订单</a></li>
-                    <li class="dropdown-item"><a href="">我的地址</a></li>
-                    <li class="dropdown-item"><a href="">我的购物袋</a></li>
-                    <li class="dropdown-item"><a href="">我的消息</a></li>
-                    <li class="dropdown-item"><a href="">联系客服</a></li>
+                    <li><a href="">我的订单</a></li>
+                    <li><a href="">我的信息</a></li>
+                    <li><a href="">购物袋</a></li>
+                    <li><a href="">消息</a></li>
+                    <li><a href="">联系我们</a></li>
                 </ul>
                 <div class="float-right" id="CurrentUserOperateG">
                     <a href="#" class="DPopup-Open" data-for="LoginPanel" data-toggle="modal" data-target="#myModal">登录</a>
@@ -111,18 +127,268 @@
 
     <div class="container-fluid dui body">
         <div class="dui-fullscreen" style="background-image: url('images/background/bg2.jpg')">
+            <div class="col-8 offset-2 col-center-block">
+                <div class="card">
+                    <div class="card-body">
+                        <div style="color: white;text-align: center"><span style="border: 1px solid white;padding: 20px;font-size: 50px;">现在，发现属于你的味道</span></div>
+                        <div class="row DInputGroup search">
+                            <i class="iconfont icon-sousuo" style="color: white"></i>
+                            <input type="text" placeholder="/美食/餐厅/你的订单" style="color: white;">
+                            <input type="button" class="Orange" value="搜索">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dui-fullscreen" style="background-image: url('images/background/bg3.jpg')">
+            <div class="container" style="margin-top: 10%">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <p>寻找美味</p>
+                        <h1>怎样找到属于你的味道</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-4" style="margin-top: 50px">
+                        <div>
+                            <img src="images/background/123-1.png" style="float: left">
+                            <h2><a href="">选择餐厅</a></h2>
+                            <p style="display:inline-block;margin-top: 15px;font-size: 20px">这里您可以挑选您喜爱的美味厨房</p>
+                            <p style="display:inline-block;margin-top: 15px;font-size: 20px">/春天的秋/蓝调·薇/龙小虾/乐烤/乐心bbq烤肉餐厅/hi饕比比客/忆湘情特色餐厅/锅先生......</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4" style="margin-top: 50px">
+                        <div>
+                            <img src="images/background/123-2.png" style="float: left">
+                            <h2><a href="">选择美食</a></h2>
+                            <p style="display:inline-block;margin-top: 15px;font-size: 20px">在这里您可以尽情挑选你喜爱的食物，将这些可爱的美食加入到你的购物袋中</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4" style="margin-top: 50px">
+                        <div>
+                            <img src="images/background/123-3.png" style="float: left">
+                            <h2><a href="">迎接属于你的味道</a></h2>
+                            <p style="display:inline-block;margin-top: 15px;font-size:20px">我们的员工将风雨无阻的第一时间将美的味道递送到您的手里</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="dui-fullscreen">
-        </div>
-
-        <div class="dui-fullscreen">
+            <div class="container" style="margin-top: 15px">
+                <div class="row">
+                    <div class="col-12" style="margin-top: 50px">
+                        <h3>推荐属于你的味道</h3>
+                        <a href="" class="float-right">重新发现</a>
+                    </div>
+                </div>
+                <div class="row restaurant-list">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="images/restaurant/restaurant1.jpg"/>
+                                <ul class="restaurant-info">
+                                    <li class="restaurant-name">麦当劳</li>
+                                    <li class="restaurant-address">内蒙古大学西街623号</li>
+                                    <li><ul class="restaurant-star" data-star="5">
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                    </ul></li>
+                                    <li><a href="" class="float-right">我要订餐</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="images/restaurant/restaurant2.jpg"/>
+                                <ul class="restaurant-info">
+                                    <li class="restaurant-name">吉野家</li>
+                                    <li class="restaurant-address">内蒙古大学西街624号</li>
+                                    <li><ul class="restaurant-star" data-star="5">
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                    </ul></li>
+                                    <li><a href="" class="float-right">我要订餐</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="images/restaurant/restaurant3.jpg"/>
+                                <ul class="restaurant-info">
+                                    <li class="restaurant-name">德克士</li>
+                                    <li class="restaurant-address">内蒙古大学西街627号</li>
+                                    <li><ul class="restaurant-star" data-star="5">
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                    </ul></li>
+                                    <li><a href="" class="float-right">我要订餐</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="images/restaurant/restaurant7.jpg"/>
+                                <ul class="restaurant-info">
+                                    <li class="restaurant-name">德顺源</li>
+                                    <li class="restaurant-address">内蒙古大学北街623号胡同</li>
+                                    <li><ul class="restaurant-star" data-star="5">
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                    </ul></li>
+                                    <li><a href="" class="float-right">我要订餐</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="images/restaurant/restaurant5.jpg"/>
+                                <ul class="restaurant-info">
+                                    <li class="restaurant-name">汉堡王</li>
+                                    <li class="restaurant-address">胡同西口623号</li>
+                                    <li><ul class="restaurant-star" data-star="5">
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                    </ul></li>
+                                    <li><a href="" class="float-right">我要订餐</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="images/restaurant/restaurant6.jpg"/>
+                                <ul class="restaurant-info">
+                                    <li class="restaurant-name">武汉九味鸭脖</li>
+                                    <li class="restaurant-address">西湖同路口623号</li>
+                                    <li><ul class="restaurant-star" data-star="5">
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                    </ul></li>
+                                    <li><a href="" class="float-right">我要订餐</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="images/restaurant/restaurant9.jpg"/>
+                                <ul class="restaurant-info">
+                                    <li class="restaurant-name">卷饼粥铺</li>
+                                    <li class="restaurant-address">上海东路623号</li>
+                                    <li><ul class="restaurant-star" data-star="5">
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                    </ul></li>
+                                    <li><a href="" class="float-right">我要订餐</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="images/restaurant/restaurant10.jpg"/>
+                                <ul class="restaurant-info">
+                                    <li class="restaurant-name">久九香削面</li>
+                                    <li class="restaurant-address">北京东路623号</li>
+                                    <li><ul class="restaurant-star" data-star="5">
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                    </ul></li>
+                                    <li><a href="" class="float-right">我要订餐</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="images/restaurant/restaurant11.jpg"/>
+                                <ul class="restaurant-info">
+                                    <li class="restaurant-name">一只鸡</li>
+                                    <li class="restaurant-address">饥肠辘路623号</li>
+                                    <li><ul class="restaurant-star" data-star="5">
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                        <li><i class="iconfont icon-star"></i></li>
+                                    </ul></li>
+                                    <li><a href="" class="float-right">我要订餐</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
 
-    <div class="container-fluid DFooter">
-
+    <div class="container-fluid dui footer" style="background-image: url('images/background/bg8.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6" style="margin-top: 50px">
+                    <ul>
+                        <li style="font-size: 20px">联系我们:</li>
+                        <li>联系方式：（0571）28993366</li>
+                        <li>邮箱：dongbotao1543@163.com</li>
+                        <li>电话：159xxxxxxxx</li>
+                        <li>通讯地址：内蒙古大学东校区</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-6" style="margin-top: 50px">
+                    <ul>
+                        <li style="font-size: 20px">友情链接:</li>
+                        <li>美团：<a href="https://waimai.meituan.com/">https://waimai.meituan.com/</a></li>
+                        <li>饿了么：<a href="https://www.ele.me/home/">https://www.ele.me/home/</a></li>
+                        <li>大众点评：<a href="https://www.dianping.com/">https://www.dianping.com/</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    copyright@ imu-web-20190207
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script src="js/common/jquery.min.js"></script>

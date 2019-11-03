@@ -50,7 +50,7 @@
 }
 /*页面默认背景颜色*/
 body{
-    background-color: #efefef;
+    background-color: white;
 }
 /*页面主体结构分为：DHeader/DBody/DFooter*/
 .DHeader{
@@ -205,7 +205,7 @@ Content中的内容可以自定义,不需要Content也可以
     width: 100%;
     float: left;
     height: 30px;
-    background-color: rgba(241, 84, 49, 0.79);
+    background-color: rgb(126, 198, 217);
     color: white;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -235,6 +235,7 @@ Content中的内容可以自定义,不需要Content也可以
     overflow-y: scroll;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    padding-bottom: 50px;
 }
 /*透黑色蒙版，配合弹出窗使用*/
 .DMask{
@@ -276,7 +277,7 @@ type=password 的样式为白色无边框
     content: "";
     width: 0;
     height: 2px;
-    background-color: rgba(241, 84, 49, 0.79);
+    background-color: #7EC6D9;
     position: absolute;
     left: 50%;
     transition: all 0.3s;
@@ -315,6 +316,48 @@ type=password 的样式为白色无边框
     outline:none;
     border-bottom: 1px solid rgba(0,0,0,0.2);
     background-color: rgba(0,0,0,0);
+}
+.DInputGroup.search{
+    width: 100%;
+    margin-top: 50px;
+}
+.DInputGroup.search:after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+}
+.DInputGroup.search i{
+    display: inline-block;
+    float: left;
+    height: 50px;
+    width: 5%;
+    text-align: right;
+    line-height: 50px;
+    font-size: 30px;
+    background-color: rgba(0,0,0,0.3);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.DInputGroup.search input[type=text]{
+    display: inline-block;
+    float: left;
+    height: 50px;
+    width: 80%;
+    background-color: rgba(0,0,0,0.3);
+}
+.DInputGroup.search input[type=button]{
+    display: inline-block;
+    margin-top: 0;
+    float: right;
+    height: 50px;
+    width:10%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: rgba(0,0,0,0.3);
 }
 /*标签的显示Label*/
 .DInputGroup label{
@@ -359,6 +402,10 @@ Button样式
 }
 .Green{
     background-color: #18cf7d;
+    color: white;
+}
+.LightBlue{
+    background-color: #7EC6D9;
     color: white;
 }
 /*
@@ -419,6 +466,14 @@ Search结构分为：搜索图标/文本输入框/搜索按钮
 }
 .DInputGroup.Search input[type="button"]:hover{
     box-shadow: 0px 0px 0px;
+}
+.DInputGroup select{
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: rgba(0,0,0,0);
+    border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 /*日期选择器*/
 .DInputGroup input[type="date"]{
