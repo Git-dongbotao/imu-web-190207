@@ -40,17 +40,6 @@ $(document).ready(function () {
         var fileInfo=getFileInfo(this);
         $("#"+fileInfo.dataFor).val(fileInfo.fileName+"---"+fileInfo.fileSize+"---"+fileInfo.fileType);
     })
-    //监听滚轮，修改头为黑底
-    $(window).scroll(function(){
-        var top = $(document).scrollTop();
-        if(top > 700){
-            $(".dui.header").removeClass("bg-transparent");
-            $(".dui.header").addClass("bg-white");
-        }else{
-            $(".dui.header").removeClass("bg-white");
-            $(".dui.header").addClass("bg-transparent");
-        }
-    })
 })
 //提供的接口区
 //文件上传对外接口

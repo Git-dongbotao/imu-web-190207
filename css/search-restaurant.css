@@ -1,0 +1,24 @@
+.search-card{
+    background-color: white;
+    border: none;
+    height: 80px;
+}
+.search-card p{
+    text-align: center;
+    line-height: 40px;
+    border-right: 1px lightgray solid;
+}
+.food-type{
+    overflow: hidden;
+}
+.food-type li{
+    float: left;
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.food-type li:hover{
+    color: #7ec6d9;
+}
