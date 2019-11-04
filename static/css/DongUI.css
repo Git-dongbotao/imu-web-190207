@@ -293,7 +293,7 @@ type=password 的样式为白色无边框
 }
 .DInputGroup.selected:after{
     left: 0%;
-    width: 100%;
+    width: 0%;
     cursor: pointer;
 }
 .DInputGroup input::placeholder{

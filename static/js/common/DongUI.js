@@ -27,14 +27,6 @@ $(document).ready(function () {
         $(".DMask").css("display","none");
         $(this).closest(".DPopup").fadeOut(500);
     })
-    //输入框下划线的显示
-    $("Body").delegate("input[type=text],input[type=password]","focus",function () {
-            $(this).closest(".DInputGroup").addClass("selected");
-    })
-    $("Body").delegate("input[type=text],input[type=password]","blur",function () {
-        $(this).closest(".DInputGroup").removeClass("selected");
-    })
-
     //文件上传文本显示
     $("Body").delegate("input[type='file']","change",function () {
         var fileInfo=getFileInfo(this);
