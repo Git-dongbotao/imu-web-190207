@@ -212,24 +212,23 @@ Content中的内容可以自定义,不需要Content也可以
     display: inline-block;
     width: 100%;
     float: left;
-    height: 30px;
-    background-color: rgb(126, 198, 217);
-    color: white;
+    height: 50px;
+    line-height: 50px;
+    background-color: white;
+    color: #777777;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
 .DPopup-Title span{
     display: inline-block;
     float: left;
-    line-height: 30px;
-    margin-left: 30px;
+    margin-left: 20px;
     font-size: 20px;
 }
 .DPopup-Title i{
     display: inline-block;
     float: right;
-    line-height: 30px;
-    margin-right: 30px;
+    margin-right: 20px;
     font-size: 20px;
 }
 .DPopup-Title i:hover{
@@ -239,11 +238,17 @@ Content中的内容可以自定义,不需要Content也可以
     display: inline-block;
     width: 100%;
     height: calc(100% - 30px);
-    background-color: rgb(245, 245, 245);
+    background-color: white;
     overflow-y: scroll;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    padding-bottom: 50px;
+}
+.DPopup-Bottom-Image{
+    width: 100%;
+}
+.DPopup-Top-Image{
+    width: 30%;
+    margin-left: 35%;
 }
 /*透黑色蒙版，配合弹出窗使用*/
 .DMask{
