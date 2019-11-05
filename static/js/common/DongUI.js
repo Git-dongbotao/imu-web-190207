@@ -3,7 +3,7 @@ $(document).ready(function () {
     //打开和关闭侧边栏操作
     $("Body").delegate(".DSliderBar-Open","click",function () {
         var items=$(".DSliderBar").children();
-        $(".DSliderBar").animate({width:'280px'},500);
+        $(".DSliderBar").animate({width:'375px'},500);
         $.each(items,function () {
             $(this).show(200);
         })

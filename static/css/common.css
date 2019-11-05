@@ -9,7 +9,7 @@
 .card{
     background-color: rgba(0,0,0,0);
 }
-.restaurant-list .card{
+.restaurant-list .card,.food-list .card{
     margin-top: 15px;
     margin-bottom: 15px;
     border: none;
@@ -17,14 +17,17 @@
     background-color: white;
     cursor: pointer;
 }
-.restaurant-list .card:hover{
+.restaurant-list .card:hover,.food-list .card:hover{
     box-shadow:-1px 2px 16px #8A8A8A;
 }
 .restaurant-list .card img{
     width: 50%;
     float: left;
 }
-
+.food-list .card img{
+    width: 100%;
+    height: 222px;
+}
 .restaurant-info{
     float: left;
     width: 50%;
@@ -40,7 +43,7 @@
 }
 .restaurant-star li{
     float: left;
-    color: #7EC6D9;
+    color:#ff5775;
 }
 .distributor-function{
     display: inline-block;
@@ -69,4 +72,57 @@
 
 #accept_order,#comment{
     display: none;
+}
+
+.food-item{
+    height: 100px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.food-item:hover{
+    box-shadow:-1px 2px 16px #8A8A8A;
+}
+.food-item i{
+    color: #ff5775;
+}
+.food-info{
+    margin-top: 10px;
+}
+.food-item img{
+    width: 120px;
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+
+.restaurant-one-image{
+    width: 100%;
+}
+@media (max-width: 576px) {
+    dui-horizontal{
+        display: none;
+    }
+}
+.restaurant-one-name,.restaurant-one-address,.restaurant-one-time{
+    text-align: left;
+    line-height: 80px;
+    font-size: 25px;
+    color: white;
+}
+.restaurant-one-menu{
+    width: 100%;
+    display: inline-block;
+    margin-top: 40px;
+}
+.restaurant-one-menu a{
+    color: white;
+}
+.restaurant-one-menu a:after{
+    background-color: #ff5775;
+}
+
+.food-item-info{
+    font-size: 22px;
 }

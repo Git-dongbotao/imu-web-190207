@@ -147,6 +147,13 @@ a:hover:after,a.selected:after{
     background-repeat: no-repeat;
     background-size: cover;
 }
+.dui-horizontal{
+    width: 100%;
+    display: inline-block;
+    margin-top: 0px;
+    height: 300px;
+    background-size:cover;
+}
 /*输入框的样式*/
 .dui.input-group{
     position: relative;
@@ -300,4 +307,8 @@ input class="CheckCode" 具体的验证信息
     outline: none;
     background-color: rgba(0,0,0,0);
     border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.icon-active{
+    color: #ff5775;
 }

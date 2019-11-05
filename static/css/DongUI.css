@@ -103,7 +103,7 @@ body{
     height: 60px;
     border-radius: 0 40px 40px 0;
     position: fixed;
-    background-color: #f15431;
+    background-color: #ff5775;
     text-align: center;
     line-height: 60px;
     font-size: 25px;
@@ -136,13 +136,14 @@ body{
 .DSliderBar-Title i{
     margin-right: 10px;
     font-size: 25px;
-    color: #f15431;
+    color: #ff5775;
 }
 .DSliderBar-Content{
     display: inline-block;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 235px);
     float: left;
+    overflow-x: hidden;
     overflow-y: scroll;
 }
 .DSliderBar-Content.Item{
@@ -155,19 +156,25 @@ body{
     display: inline-block;
     width: 3px;
     height: 0px;
-    background-color: #f15431;
+    background-color: #ff5775;
     float: left;
     transition: all 0.2s;
 }
 .DSliderBar-Item:hover:before{
-    width: 3px;
+    width: 0px;
+}
+.DSliderBar-Footer{
+    height: 165px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
 }
 .DSliderBar-Close{
     width: 30px;
     height: 60px;
     border-radius: 40px 0 0 40px;
     float: right;
-    background-color: #f15431;
+    background-color: #ff5775;
     text-align: center;
     line-height: 60px;
     font-size: 25px;
@@ -555,12 +562,7 @@ progress::-webkit-progress-value  { background: #15af35; }
     width: 30px;
     height: 30px;
 }
-.dui-horizontal{
-    width: 100%;
-    float: left;
-    height: 400px;
-    background-size:cover;
-}
+
 /*背景图片，自适应于父元素大小*/
 .DBackground.Img{
     float: left;

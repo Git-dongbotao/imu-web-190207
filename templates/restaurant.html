@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属于你的味道</title>
+    <link rel="Shortcut Icon" href="../static/images/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/dong-ui.css">
+    <link rel="stylesheet" href="../static/css/DongUI.css">
+    <link rel="stylesheet" href="../static/css/iconfont.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+</head>
+<body>
+    <div class="DPopup" id="addFood">
+        <div class="DPopup-Title">
+            <span>新建美食</span>
+            <i class="iconfont icon-close_icon DPopup-Close"></i>
+        </div>
+        <div class="DPopup-Content">
+            <div class="DInputGroup Upload">
+                <i class="iconfont icon-wenjian"></i>
+                <input id="new_food_image_name" type="text" PLACEHOLDER="美食图像信息/最多不超过1MB" disabled>
+                <input id="food_image" data-for="new_food_image_name" type="file" class="dui LightBlue" multiple>
+            </div>
+            <div class="dui input-group line">
+                <input type="text" id="food_name" PLACEHOLDER="美食名称"/>
+            </div>
+            <div class="dui input-group line">
+                <input type="text" id="food_type" PLACEHOLDER="美食类别"/>
+            </div>
+            <div class="dui input-group line">
+                <input type="text" id="food_price" PLACEHOLDER="美食单价"/>
+            </div>
+            <div class="dui input-group">
+                <input id="upload" type="button" class="dui light-blue" value="创建美食">
+            </div>
+            <progress value="0" max="100" id="progress"></progress>
+            <img class="DPopup-Bottom-Image" src="../static/images/background/bolang.png"/>
+        </div>
+    </div>
+    <!--侧边栏和弹窗位置-->
+    <div class="DSliderBar-Open dui red"><i class="iconfont icon-gouwucheman"></i></div>
+    <div class="DSliderBar">
+        <div class="DSliderBar-Title" ><i class="iconfont icon-gouwucheman"></i>购物车</div>
+        <div class="DSliderBar-Close"><i class="iconfont icon-jiantou-zuo"></i></div>
+        <ul class="DSliderBar-Content" id="ShoppingCart">
+            <li class="DSliderBar-Item food-item">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="../static/images/foods/food1.jpg"/>
+                    </div>
+                    <div class="col-7 food-info">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>热辣汉堡</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div>￥16.5</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="food-operate float-right">
+                                    <i class="iconfont icon-jianhao"></i>
+                                    <span class="food-price">123</span>
+                                    <i class="iconfont icon-jiahao2"></i>
+                                    <i class="iconfont icon-shanchu"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="DSliderBar-Item food-item">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="../static/images/foods/food1.jpg"/>
+                    </div>
+                    <div class="col-7 food-info">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>热辣汉堡</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div>￥16.5</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="food-operate float-right">
+                                    <i class="iconfont icon-jianhao"></i>
+                                    <span class="food-price">123</span>
+                                    <i class="iconfont icon-jiahao2"></i>
+                                    <i class="iconfont icon-shanchu"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="DSliderBar-Item food-item">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="../static/images/foods/food1.jpg"/>
+                    </div>
+                    <div class="col-7 food-info">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>热辣汉堡</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div>￥16.5</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="food-operate float-right">
+                                    <i class="iconfont icon-jianhao"></i>
+                                    <span class="food-price">123</span>
+                                    <i class="iconfont icon-jiahao2"></i>
+                                    <i class="iconfont icon-shanchu"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="DSliderBar-Item food-item">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="../static/images/foods/food1.jpg"/>
+                    </div>
+                    <div class="col-7 food-info">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>热辣汉堡</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div>￥16.5</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="food-operate float-right">
+                                    <i class="iconfont icon-jianhao"></i>
+                                    <span class="food-price">123</span>
+                                    <i class="iconfont icon-jiahao2"></i>
+                                    <i class="iconfont icon-shanchu"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="DSliderBar-Item food-item">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="../static/images/foods/food1.jpg"/>
+                    </div>
+                    <div class="col-7 food-info">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>热辣汉堡</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div>￥16.5</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="food-operate float-right">
+                                    <i class="iconfont icon-jianhao"></i>
+                                    <span class="food-price">123</span>
+                                    <i class="iconfont icon-jiahao2"></i>
+                                    <i class="iconfont icon-shanchu"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="DSliderBar-Item food-item">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="../static/images/foods/food1.jpg"/>
+                    </div>
+                    <div class="col-7 food-info">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>热辣汉堡</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div>￥16.5</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="food-operate float-right">
+                                    <i class="iconfont icon-jianhao"></i>
+                                    <span class="food-price">123</span>
+                                    <i class="iconfont icon-jiahao2"></i>
+                                    <i class="iconfont icon-shanchu"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="DSliderBar-Item food-item">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="../static/images/foods/food1.jpg"/>
+                    </div>
+                    <div class="col-7 food-info">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>热辣汉堡</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div>￥16.5</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="food-operate float-right">
+                                    <i class="iconfont icon-jianhao"></i>
+                                    <span class="food-price">123</span>
+                                    <i class="iconfont icon-jiahao2"></i>
+                                    <i class="iconfont icon-shanchu"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="DSliderBar-Item food-item">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="../static/images/foods/food1.jpg"/>
+                    </div>
+                    <div class="col-7 food-info">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>热辣汉堡</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div>￥16.5</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="food-operate float-right">
+                                    <i class="iconfont icon-jianhao"></i>
+                                    <span class="food-price">123</span>
+                                    <i class="iconfont icon-jiahao2"></i>
+                                    <i class="iconfont icon-shanchu"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="DSliderBar-Item food-item">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="../static/images/foods/food1.jpg"/>
+                    </div>
+                    <div class="col-7 food-info">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>热辣汉堡</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div>￥16.5</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="food-operate float-right">
+                                    <i class="iconfont icon-jianhao"></i>
+                                    <span class="food-price">123</span>
+                                    <i class="iconfont icon-jiahao2"></i>
+                                    <i class="iconfont icon-shanchu"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="DSliderBar-Footer">
+            <div class="dui input-group">
+                <button type="button" class="btn btn-outline-danger btn-block">￥145</button>
+                <input id="Order" type="button" class="dui red" value="下单">
+            </div>
+        </div>
+    </div>
+    <div class="DMask"></div>
+    <div class="DPopup" id="LoginPanel">
+        <div class="DPopup-Title">
+            <span>登录</span>
+            <i class="iconfont icon-close_icon DPopup-Close"></i>
+        </div>
+        <div class="DPopup-Content">
+            <img class="DPopup-Top-Image" src="../static/images/background/meishi1.png"/>
+            <div class="dui input-group">
+                <i class="iconfont icon-yonghu"></i>
+                <select id="UserRole">
+                    <option value="1">用户</option>
+                    <option value="2">商家</option>
+                    <option value="3">配送员</option>
+                </select>
+            </div>
+            <div class="dui input-group line">
+                <i class="iconfont icon-yonghu"></i>
+                <input id="username" type="text" PLACEHOLDER="用户名">
+            </div>
+            <div class="dui input-group line">
+                <i class="iconfont icon-mima"></i>
+                <input id="password" type="password" PLACEHOLDER="密码">
+            </div>
+            <div class="dui input-group check line">
+                <i class="iconfont icon-mima"></i>
+                <input class="check-code" id="checkCode" type="text"  PLACEHOLDER="验证码">
+                <img class="check-form" src="../static/images/background/checkcode.jpg"/>
+            </div>
+            <div class="dui input-group">
+                <input id="Login" type="button" class="dui light-blue" value="登录">
+            </div>
+            <div class="dui input-group">
+                <a href="#">忘记密码？</a>
+            </div>
+            <img class="DPopup-Bottom-Image" src="../static/images/background/bolang.png"/>
+        </div>
+    </div>
+    <div class="DPopup" id="RegisterPanel">
+        <div class="DPopup-Title">
+            <span>注册</span>
+            <i class="iconfont icon-close_icon DPopup-Close"></i>
+        </div>
+        <div class="DPopup-Content">
+            <img class="DPopup-Top-Image" src="../static/images/background/meishi1.png"/>
+            <div class="dui input-group line">
+                <i class="iconfont icon-yonghu"></i>
+                <input id="newUsername" type="text" PLACEHOLDER="用户名（邮箱/电话）">
+            </div>
+            <div class="dui input-group line">
+                <i class="iconfont icon-yonghu"></i>
+                <input id="newName" type="text" PLACEHOLDER="昵称">
+            </div>
+            <div class="dui input-group">
+                <i class="iconfont icon-yonghu"></i>
+                <select id="newUserType">
+                    <option value="1">用户</option>
+                    <option value="2">商家</option>
+                    <option value="3">配送员</option>
+                </select>
+            </div>
+            <div class="dui input-group line">
+                <i class="iconfont icon-mima"></i>
+                <input id="newPassword1" type="password" PLACEHOLDER="密码（8位以上字母与数字组合）">
+            </div>
+            <div class="dui input-group line">
+                <i class="iconfont icon-mima"></i>
+                <input id="newPassword2" type="password" PLACEHOLDER="再次输入密码">
+            </div>
+            <div class="dui input-group">
+                <input id="Register" type="button" class="LightBlue" value="注册">
+            </div>
+            <img class="DPopup-Bottom-Image" src="../static/images/background/bolang.png"/>
+        </div>
+    </div>
+
+    <div class="container-fluid dui header bg-transparent">
+        <div class="row">
+            <div class="col-sm-1">
+                <div class="dropdown">
+                    <img class="dui header-logo dropdown" data-toggle="dropdown" src="../static/images/favicon.ico" style="margin-left: 30px"/>
+                    <ul class="dropdown-menu bg-dark">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="" class="selected">发现美味</a></li>
+                        <li><a href="">我的订单</a></li>
+                        <li><a href="">我要开店</a></li>
+                        <li><a href="">我要配送</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <ul class="dui header-navigation">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="" class="selected">发现美味</a></li>
+                    <li><a href="">我的订单</a></li>
+                    <li><a href="">我要开店</a></li>
+                    <li><a href="">我要配送</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <img src="../static/images/user-heading/default_user.jpg" class="dui-img-user dropdown float-right" data-toggle="dropdown" id="CurrentUserImg"/>
+                <ul class="dropdown-menu bg-dark">
+                    <li><a href="">我的订单</a></li>
+                    <li><a href="">我的信息</a></li>
+                    <li><a href="">购物袋</a></li>
+                    <li><a href="">消息</a></li>
+                    <li><a href="">联系我们</a></li>
+                </ul>
+                <div class="float-right" id="CurrentUserOperateG">
+                    <a href="#" class="DPopup-Open" data-for="LoginPanel">登录</a>
+                    <a href="#" class="DPopup-Open" data-for="RegisterPanel">注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid dui body">
+        <div class="dui-horizontal" style="background-image: url('../static/images/background/bg22.jpg')">
+            <div class="container">
+                <div class="row restaurant-one-info" style="margin-top: 80px">
+                    <div class="col-sm-2 col-md-2 col-lg-2">
+                        <img class="restaurant-one-image" src="../static/images/restaurant/restaurant1.jpg" />
+                    </div>
+                    <div class="col-sm-12 col-md-2 col-lg-3">
+                        <span class="restaurant-one-name">麦当劳</span>
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="restaurant-star" data-star="5">
+                                    <li><i class="iconfont icon-star"></i></li>
+                                    <li><i class="iconfont icon-star"></i></li>
+                                    <li><i class="iconfont icon-star"></i></li>
+                                    <li><i class="iconfont icon-star"></i></li>
+                                    <li><i class="iconfont icon-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-2 col-lg-3">
+                        <span class="restaurant-one-address">北京路903号</span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                            <div class="col-12">
+                                <span class="restaurant-one-time">平均送达时间：<span class="arr_time">31</span>分钟</span>
+                            </div>
+                    </div>
+                </div>
+                <ul class="dui header-navigation restaurant-one-menu">
+                    <li><a href="" class="selected">菜单</a></li>
+                    <li><a href="">评价</a></li>
+                    <li><a href="" aria-disabled="true">接单</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="dui-fullscreen">
+            <div class="container" style="margin-top: 80px">
+                <div class="card search-card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-1" >
+                                <div>
+                                    <img src="../static/images/background/123-3.png" style="float: left">
+                                </div>
+                            </div>
+                            <div class="col-11" >
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="美食">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-dark">搜索</button>
+                                        <button class="btn dui red DPopup-Open" data-for="addFood">创建</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row food-list">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="../static/images/foods/food1.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="row food-item-info">
+                                    <div class="col-12">
+                                        <div>番茄蛋糕</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="badge badge-danger">￥16.5</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-item-operate float-right">
+                                            <i class="iconfont icon-jianhao icon-active"></i>
+                                            <span class="food-item-number">0</span>
+                                            <i class="iconfont icon-jiahao2 icon-active"></i>
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="../static/images/foods/food2.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="row food-item-info">
+                                    <div class="col-12">
+                                        <div>芝士披萨</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="badge badge-danger">￥28.5</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-item-operate float-right">
+                                            <i class="iconfont icon-jianhao icon-active"></i>
+                                            <span class="food-item-number">0</span>
+                                            <i class="iconfont icon-jiahao2 icon-active"></i>
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="../static/images/foods/food3.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="row food-item-info">
+                                    <div class="col-12">
+                                        <div>番茄蛋糕</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="badge badge-danger">￥16.5</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-item-operate float-right">
+                                            <i class="iconfont icon-jianhao icon-active"></i>
+                                            <span class="food-item-number">0</span>
+                                            <i class="iconfont icon-jiahao2 icon-active"></i>
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="../static/images/foods/food4.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="row food-item-info">
+                                    <div class="col-12">
+                                        <div>番茄蛋糕</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="badge badge-danger">￥16.5</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-item-operate float-right">
+                                            <i class="iconfont icon-jianhao icon-active"></i>
+                                            <span class="food-item-number">0</span>
+                                            <i class="iconfont icon-jiahao2 icon-active"></i>
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="../static/images/foods/food5.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="row food-item-info">
+                                    <div class="col-12">
+                                        <div>番茄蛋糕</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="badge badge-danger">￥16.5</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-item-operate float-right">
+                                            <i class="iconfont icon-jianhao icon-active"></i>
+                                            <span class="food-item-number">0</span>
+                                            <i class="iconfont icon-jiahao2 icon-active"></i>
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="../static/images/foods/food6.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="row food-item-info">
+                                    <div class="col-12">
+                                        <div>番茄蛋糕</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="badge badge-danger">￥16.5</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-item-operate float-right">
+                                            <i class="iconfont icon-jianhao icon-active"></i>
+                                            <span class="food-item-number">0</span>
+                                            <i class="iconfont icon-jiahao2 icon-active"></i>
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="../static/images/foods/food7.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="row food-item-info">
+                                    <div class="col-12">
+                                        <div>番茄蛋糕</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="badge badge-danger">￥16.5</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-item-operate float-right">
+                                            <i class="iconfont icon-jianhao icon-active"></i>
+                                            <span class="food-item-number">0</span>
+                                            <i class="iconfont icon-jiahao2 icon-active"></i>
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="../static/images/foods/food8.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="row food-item-info">
+                                    <div class="col-12">
+                                        <div>番茄蛋糕</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="badge badge-danger">￥16.5</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-item-operate float-right">
+                                            <i class="iconfont icon-jianhao icon-active"></i>
+                                            <span class="food-item-number">0</span>
+                                            <i class="iconfont icon-jiahao2 icon-active"></i>
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="../static/images/foods/food9.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="row food-item-info">
+                                    <div class="col-12">
+                                        <div>番茄蛋糕</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="badge badge-danger">￥16.5</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-item-operate float-right">
+                                            <i class="iconfont icon-jianhao icon-active"></i>
+                                            <span class="food-item-number">0</span>
+                                            <i class="iconfont icon-jiahao2 icon-active"></i>
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="../static/images/foods/food10.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="row food-item-info">
+                                    <div class="col-12">
+                                        <div>番茄蛋糕</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="badge badge-danger">￥16.5</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-item-operate float-right">
+                                            <i class="iconfont icon-jianhao icon-active"></i>
+                                            <span class="food-item-number">0</span>
+                                            <i class="iconfont icon-jiahao2 icon-active"></i>
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="../static/images/foods/food11.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="row food-item-info">
+                                    <div class="col-12">
+                                        <div>番茄蛋糕</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="badge badge-danger">￥16.5</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-item-operate float-right">
+                                            <i class="iconfont icon-jianhao icon-active"></i>
+                                            <span class="food-item-number">0</span>
+                                            <i class="iconfont icon-jiahao2 icon-active"></i>
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="../static/images/foods/food12.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="row food-item-info">
+                                    <div class="col-12">
+                                        <div>番茄蛋糕</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="badge badge-danger">￥16.5</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-item-operate float-right">
+                                            <i class="iconfont icon-jianhao icon-active"></i>
+                                            <span class="food-item-number">0</span>
+                                            <i class="iconfont icon-jiahao2 icon-active"></i>
+                                            <i class="iconfont icon-shanchu"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid dui footer" style="background-image: url('../static/images/background/bg8.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6" style="margin-top: 50px">
+                    <ul>
+                        <li style="font-size: 20px">联系我们:</li>
+                        <li>联系方式：（0571）28993366</li>
+                        <li>邮箱：dongbotao1543@163.com</li>
+                        <li>电话：159xxxxxxxx</li>
+                        <li>通讯地址：内蒙古大学东校区</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-6" style="margin-top: 50px">
+                    <ul>
+                        <li style="font-size: 20px">友情链接:</li>
+                        <li>美团：<a href="https://waimai.meituan.com/">https://waimai.meituan.com/</a></li>
+                        <li>饿了么：<a href="https://www.ele.me/home/">https://www.ele.me/home/</a></li>
+                        <li>大众点评：<a href="https://www.dianping.com/">https://www.dianping.com/</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    copyright@ imu-web-20190207
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../static/js/common/jquery.min.js"></script>
+<script src="../static/js/common/bootstrap.bundle.min.js"></script>
+<script src="../static/js/common/bootstrap.min.js"></script>
+<script src="../static/js/common/DongUI.js"></script>
+<script src="../static/js/page/restaurant.js"></script>
+</html>
