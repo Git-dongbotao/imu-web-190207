@@ -109,7 +109,7 @@ body{
     font-size: 25px;
     color: white;
     transition: all 0.5s;
-    z-index: 99;
+    z-index: 123;
     box-shadow: 0px 0px 0px;
 }
 .DSliderBar-Open:hover{
@@ -122,7 +122,7 @@ body{
     width: 0px;
     height: 100%;
     background-color: white;
-    z-index: 99;
+    z-index: 123;
     box-shadow:6px 1px 20px #707070;
     overflow: hidden;
 }
@@ -161,7 +161,6 @@ body{
 }
 .DSliderBar-Item:hover:before{
     width: 3px;
-    height: 60px;
 }
 .DSliderBar-Close{
     width: 30px;

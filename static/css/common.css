@@ -42,3 +42,31 @@
     float: left;
     color: #7EC6D9;
 }
+.distributor-function{
+    display: inline-block;
+    width:100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.distributor-function:hover{
+    box-shadow:-1px 2px 16px #8A8A8A;
+}
+.distributor-function:before{
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 0px;
+    background-color: #f15431;
+    float: left;
+    transition: all 0.2s;
+}
+.distributor-function:hover:before{
+    width: 3px;
+    height: 40px;
+}
+
+#accept_order,#comment{
+    display: none;
+}
