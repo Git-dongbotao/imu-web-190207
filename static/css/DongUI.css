@@ -21,7 +21,7 @@
     content: "";
     width: 0;
     height: 3px;
-    background: rgba(255,255,255,0.7);
+    background: rgba(255, 87, 117, 0.7);
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -109,7 +109,7 @@ body{
     font-size: 25px;
     color: white;
     transition: all 0.5s;
-    z-index: 123;
+    z-index: 119;
     box-shadow: 0px 0px 0px;
 }
 .DSliderBar-Open:hover{
@@ -203,6 +203,10 @@ Content中的内容可以自定义,不需要Content也可以
         margin-top: 0px;
         z-index: 120;
     }
+    .DPopup-Bottom-Image{
+        position: absolute;
+        bottom: 0px;
+    }
 }
 @media (min-width: 769px) {
     .DPopup{
@@ -253,6 +257,7 @@ Content中的内容可以自定义,不需要Content也可以
 .DPopup-Bottom-Image{
     width: 100%;
 }
+
 .DPopup-Top-Image{
     width: 30%;
     margin-left: 35%;
@@ -533,10 +538,10 @@ DInputGroup Upload
     color: white;
     text-align: center;
     line-height: 40px;
-    transition: all 0.2s;
+    transition: all 0.3s;
 }
 .DInputGroup.Upload input[type=file]:hover:before{
-    background-color: #15af35;
+    box-shadow:6px 1px 20px #707070;
 }
 progress{
     width: 100%;

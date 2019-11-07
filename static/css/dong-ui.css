@@ -61,14 +61,6 @@ a:hover:after,a.selected:after{
     line-height: 30px;
 }
 
-@media (max-width: 768px) {
-    .dui.header-navigation{
-        display: none;
-    }
-    .dui.header-navigation-open{
-        display: inline-block;
-    }
-}
 .dropdown-menu.bg-dark li{
     width: 100%;
     height: 30px;
@@ -277,6 +269,12 @@ Button样式
     background-color: #7EC6D9;
     color: white;
 }
+.dui.success{
+    background-color: rgba(32, 255, 114, 0.3);
+}
+.dui.waring{
+    background-color: rgba(230, 0, 39, 0.25);
+}
 /*
 验证码输入组合DInputGroup Check
 主要结构包含
@@ -311,4 +309,34 @@ input class="CheckCode" 具体的验证信息
 
 .icon-active{
     color: #ff5775;
+}
+
+.dui.feedback{
+    display: none;
+    position: fixed;
+    margin-top: 70px;
+    margin-left: 10%;
+    width: 80%;
+    height: 50px;
+    box-shadow:6px 1px 20px #707070;
+    background-color: rgba(255, 87, 117, 0.9);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    z-index: 125;
+}
+
+@media (max-width: 768px) {
+    .dui.header-navigation{
+        display: none;
+    }
+    .dui.header-navigation-open{
+        display: inline-block;
+    }
+    .dui.feedback{
+        width: 100vw;
+        margin-top: 0vh;
+        margin-left: 0vw;
+    }
 }

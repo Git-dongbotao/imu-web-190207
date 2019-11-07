@@ -17,7 +17,22 @@
     background-color: white;
     cursor: pointer;
 }
-.restaurant-list .card:hover,.food-list .card:hover{
+#RestaurantOrderList .card{
+    font-size: 18px;
+    color: #777777;
+    border-radius: 0px;
+    margin-bottom: 15px;
+}
+#RestaurantOrderList .order-food-list li{
+    width: 100%;
+    text-align: left;
+}
+#RestaurantOrderList .badge.badge-danger{
+    width: 50%;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.restaurant-list .card:hover,.food-list .card:hover,#RestaurantOrderList .card:hover{
     box-shadow:-1px 2px 16px #8A8A8A;
 }
 .restaurant-list .card img{
@@ -74,22 +89,22 @@
     display: none;
 }
 
-.food-item{
+.buy-food-item{
     height: 100px;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s;
 }
-.food-item:hover{
+.buy-food-item:hover{
     box-shadow:-1px 2px 16px #8A8A8A;
 }
-.food-item i{
+.buy-food-item i{
     color: #ff5775;
 }
 .food-info{
     margin-top: 10px;
 }
-.food-item img{
+.buy-food-item img{
     width: 120px;
     height: 80px;
     margin-top: 10px;
@@ -100,15 +115,19 @@
 .restaurant-one-image{
     width: 100%;
 }
-@media (max-width: 576px) {
-    dui-horizontal{
-        display: none;
-    }
+.r-operate-menu{
+    margin-top:70px;
 }
-.restaurant-one-name,.restaurant-one-address,.restaurant-one-time{
+.r-operate-menu li{
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+.restaurant-one-info .form-control,#RTime{
     text-align: left;
-    line-height: 80px;
     font-size: 25px;
+    border: 0px;
     color: white;
 }
 .restaurant-one-menu{
@@ -116,13 +135,51 @@
     display: inline-block;
     margin-top: 40px;
 }
-.restaurant-one-menu a{
+.r-operate-menu a{
     color: white;
 }
-.restaurant-one-menu a:after{
+.r-operate-menu a:after{
     background-color: #ff5775;
 }
 
-.food-item-info{
-    font-size: 22px;
+.food-item-info,.food-item-name{
+    font-size: 20px;
+}
+#OrderList{
+    display: none;
+}
+#RestaurantOrder:after{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    text-align: center;
+    background-color:#ff5775 ;
+    color: white;
+    content: attr(data-content);
+}
+.search-card{
+    border: none;
+}
+.state{
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 576px) {
+    .restaurant-star,#RTime,#RAddr,#RName{
+        display: none;
+    }
+    .r-operate-menu{
+        margin-top: 51px;
+    }
+    .restaurant-one-image{
+        width: 50vw;
+    }
 }
