@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b240f08-4049-4165-8284-f0ece9e11d7c" name="Default" comment="完成了用户界面，没有完成交互，至此，前端页面样式布局全部完成，接下来是整合作业">
+    <list default="true" id="5b240f08-4049-4165-8284-f0ece9e11d7c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -336,7 +336,7 @@
       <workItem from="1573353797928" duration="4655000" />
       <workItem from="1573359354095" duration="16129000" />
       <workItem from="1573377671737" duration="23000" />
-      <workItem from="1573377707056" duration="2156000" />
+      <workItem from="1573377707056" duration="2164000" />
     </task>
     <task id="LOCAL-00002" summary="修改了项目结构">
       <created>1572791248664</created>
@@ -401,11 +401,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573379866479</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="完成了用户界面，没有完成交互，至此，前端页面样式布局全部完成，接下来是整合作业">
+      <created>1573379883048</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1573379883048</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107105000" />
+    <option name="totallyTimeSpent" value="107113000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
