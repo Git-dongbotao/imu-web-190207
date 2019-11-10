@@ -30,6 +30,14 @@ a:hover:after,a.selected:after{
     cursor: pointer;
 }
 
+.dui.background-image{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: no-repeat ;
+    background-size: cover;
+}
 
 .dui.header{
     height: 60px;
@@ -59,6 +67,9 @@ a:hover:after,a.selected:after{
     margin-top: 30px;
     height: 30px;
     line-height: 30px;
+}
+.dui.header-navigation li a:link{
+    color: white;
 }
 
 .dropdown-menu.bg-dark li{

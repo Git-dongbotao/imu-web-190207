@@ -22,3 +22,8 @@
 .food-type li:hover{
     color: #7ec6d9;
 }
+@media (max-width: 768px) {
+    .food-type,.mk{
+        display: none;
+    }
+}

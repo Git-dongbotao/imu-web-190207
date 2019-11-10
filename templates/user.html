@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属于你的味道</title>
+    <link rel="Shortcut Icon" href="../static/images/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/dong-ui.css">
+    <link rel="stylesheet" href="../static/css/DongUI.css">
+    <link rel="stylesheet" href="../static/css/iconfont.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/animate.css">
+    <link rel="stylesheet" href="../static/css/user.css">
+</head>
+<body>
+    <div class="dui feedback"></div>
+    <div class="DMask"></div>
+
+    <div class="container-fluid dui header bg-transparent">
+        <div class="row">
+            <div class="col-sm-1">
+                <div class="dropdown">
+                    <img class="dui header-logo dropdown" data-toggle="dropdown" src="../static/images/favicon.ico"/>
+                    <ul class="dropdown-menu bg-dark">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="" class="selected">发现美味</a></li>
+                        <li><a href="">我的订单</a></li>
+                        <li><a href="">我要开店</a></li>
+                        <li><a href="">我要配送</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <ul class="dui header-navigation">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="" class="selected">发现美味</a></li>
+                    <li><a href="">我的订单</a></li>
+                    <li><a href="">我要开店</a></li>
+                    <li><a href="">我要配送</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <img  src="../static/images/user-heading/default_user.jpg" class="dui-img-user dropdown float-right" data-toggle="dropdown" id="CurrentUserImg"/>
+                <ul class="dropdown-menu bg-dark">
+                    <li><a href="">我的信息/订单</a></li>
+                    <li><a href="">消息</a></li>
+                    <li><a href="">联系我们</a></li>
+                    <li><a href="">退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid dui body">
+        <div id="CurrentUserInfo" class="dui-horizontal" style="background-image: url('../static/images/background/userbg3.jpg')">
+            <div class="container">
+                <div class="row current-user" style="margin-top: 80px">
+                    <div class="col-sm-2 col-md-2 col-lg-2">
+                        <img id="CurrentUserHeading" src="../static/images/user-heading/default_user.jpg" />
+                        <div class="DInputGroup Upload">
+                            <input id="UserHeadingFile" type="file" class="dui LightBlue" multiple>
+                        </div>
+                        <button type="button" class="btn dui red btn-block" id="OpenUpdate">修改</button>
+                    </div>
+                    <div class="input-group-sm col-sm-12 col-md-5 col-lg-5">
+                        <div class="dui input-group line">
+                            <input type="text" id="CurrentUserName" disabled PLACEHOLDER="我的姓名" value="董博韬"/>
+                        </div>
+                        <div class="dui input-group line">
+                            <input type="text" id="CurrentUserPhone" disabled PLACEHOLDER="我的电话" value="15984918367"/>
+                        </div>
+                        <div class="dui input-group line">
+                            <input type="text" id="CurrentUserEmail" disabled PLACEHOLDER="我的邮箱" value="450289210@qq.com"/>
+                        </div>
+                        <div class="dui input-group line">
+                            <input type="text" id="CurrentUserRegion" disabled PLACEHOLDER="居住城市区域" value="成都"/>
+                        </div>
+                    </div>
+                    <div class="input-group-sm col-sm-12 col-md-5 col-lg-5">
+
+                        <div class="row">
+                            <div class="DInputGroup">
+                                <textarea id="CurrentUserAddress" disabled placeholder="请输入详细地址"></textarea>
+                                <button type="button" class="btn dui red btn-block" id="SaveUpdate">保存修改</button>
+                                <button type="button" class="btn dui red btn-block" id="CancelUpdate">取消修改</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dui-fullscreen" style="background-color: #eeeeee">
+            <div class="container">
+                <div class="card search-card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12" >
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="订单ID/商家名称">
+                                    <div class="input-group-append">
+                                        <button class="btn dui red">搜索</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="UserOrderList" class="container-fluid">
+                    <div id="8359" class="card user-order-item wow fadeInLeft">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="badge badge-secondary">8359</div><br>
+                                    <img src="../static/images/restaurant/restaurant1.jpg"/>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="badge badge-secondary">商家名称</div>
+                                    <br><span>麦当劳</span><br>
+                                    <div class="badge badge-secondary">联系方式</div>
+                                    <br><span>15123123167</span>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="badge badge-secondary">配送员编号</div>
+                                    <br><span>#2123123123</span><br>
+                                    <div class="badge badge-secondary">配送员姓名</div>
+                                    <br><span>#2123123123</span><br>
+                                    <div class="badge badge-secondary">配送员电话</div>
+                                    <br><span>#2123123123</span><br>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button type="button" class="btn btn-secondary btn-sm btn-block" data-toggle="collapse" data-target="#order8359">菜单详情
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="order8359" class="row collapse">
+                                        <div class="col-12">
+                                            <ul class="order-food-list">
+                                                <li>千层饼 * 1</li>
+                                                <li>芝士披萨 * 1</li>
+                                                <li>小葱羊肉披萨 * 1</li>
+                                                <li>巧克力甜甜圈 * 1</li>
+                                                <li>川辣汉堡 * 2</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="badge badge-secondary">下单时间</div>
+                                    <br><span>2019-11-10 14:10:49</span>
+                                </div>
+                                <div class="col-lg-2 r-order-state ">
+                                    <button type="button" class="btn btn-info btn-block" disabled>配送中....</button>
+                                    <button type="button" class="btn dui red btn-block AcceptOrder">接收订单</button>
+                                    <button type="button" class="btn dui red btn-block CancelOrder">取消订单</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="8353" class="card user-order-item wow fadeInLeft">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="badge badge-secondary">8359</div><br>
+                                    <img src="../static/images/restaurant/restaurant1.jpg"/>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="badge badge-secondary">商家名称</div>
+                                    <br><span>麦当劳</span><br>
+                                    <div class="badge badge-secondary">联系方式</div>
+                                    <br><span>15123123167</span>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="badge badge-secondary">配送员编号</div>
+                                    <br><span>#2123123123</span><br>
+                                    <div class="badge badge-secondary">配送员姓名</div>
+                                    <br><span>#2123123123</span><br>
+                                    <div class="badge badge-secondary">配送员电话</div>
+                                    <br><span>#2123123123</span><br>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button type="button" class="btn btn-secondary btn-sm btn-block" data-toggle="collapse" data-target="#order8353">菜单详情
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="order8353" class="row collapse">
+                                        <div class="col-12">
+                                            <ul class="order-food-list">
+                                                <li>千层饼 * 1</li>
+                                                <li>芝士披萨 * 1</li>
+                                                <li>小葱羊肉披萨 * 1</li>
+                                                <li>巧克力甜甜圈 * 1</li>
+                                                <li>川辣汉堡 * 2</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="badge badge-secondary">下单时间</div>
+                                    <br><span>2019-11-10 14:10:49</span>
+                                </div>
+                                <div class="col-lg-2 r-order-state ">
+                                    <button type="button" class="btn btn-secondary btn-block" disabled>取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="8354" class="card user-order-item wow fadeInLeft">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="badge badge-secondary">8359</div><br>
+                                    <img src="../static/images/restaurant/restaurant1.jpg"/>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="badge badge-secondary">商家名称</div>
+                                    <br><span>麦当劳</span><br>
+                                    <div class="badge badge-secondary">联系方式</div>
+                                    <br><span>15123123167</span>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="badge badge-secondary">配送员编号</div>
+                                    <br><span>#2123123123</span><br>
+                                    <div class="badge badge-secondary">配送员姓名</div>
+                                    <br><span>#2123123123</span><br>
+                                    <div class="badge badge-secondary">配送员电话</div>
+                                    <br><span>#2123123123</span><br>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button type="button" class="btn btn-secondary btn-sm btn-block" data-toggle="collapse" data-target="#order8354">菜单详情
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="order8354" class="row collapse">
+                                        <div class="col-12">
+                                            <ul class="order-food-list">
+                                                <li>千层饼 * 1</li>
+                                                <li>芝士披萨 * 1</li>
+                                                <li>小葱羊肉披萨 * 1</li>
+                                                <li>巧克力甜甜圈 * 1</li>
+                                                <li>川辣汉堡 * 2</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="badge badge-secondary">下单时间</div>
+                                    <br><span>2019-11-10 14:10:49</span>
+                                </div>
+                                <div class="col-lg-2 r-order-state ">
+                                    <button type="button" class="btn btn-success btn-block disabled">完成</button>
+                                    <button type="button" class="btn dui red btn-block CancelOrder" data-toggle="collapse" data-target="#comment8354">评论</button>
+                                </div>
+                            </div>
+                            <div id="comment8354" class="row collapse">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="DInputGroup">
+                                        <div class="badge badge-secondary">商家评价</div><br>
+                                        <textarea placeholder="评价......"></textarea>
+                                        <button type="button" class="btn dui red btn-block CompentShop">确认</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="DInputGroup">
+                                        <div class="badge badge-secondary">配送员评价</div><br>
+                                        <textarea placeholder="评价......"></textarea>
+                                        <button type="button" class="btn dui red btn-block CompentShop">确认</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="DPage" data-current="1" data-total="10" data-first="1"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid dui footer" style="background-image: url('../static/images/background/bg8.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6" style="margin-top: 50px">
+                    <ul>
+                        <li style="font-size: 20px">联系我们:</li>
+                        <li>联系方式：（0571）28993366</li>
+                        <li>邮箱：dongbotao1543@163.com</li>
+                        <li>电话：159xxxxxxxx</li>
+                        <li>通讯地址：内蒙古大学东校区</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-6" style="margin-top: 50px">
+                    <ul>
+                        <li style="font-size: 20px">友情链接:</li>
+                        <li>美团：<a href="https://waimai.meituan.com/">https://waimai.meituan.com/</a></li>
+                        <li>饿了么：<a href="https://www.ele.me/home/">https://www.ele.me/home/</a></li>
+                        <li>大众点评：<a href="https://www.dianping.com/">https://www.dianping.com/</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    copyright@ imu-web-20190207
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../static/js/common/jquery.min.js"></script>
+<script src="../static/js/common/bootstrap.bundle.min.js"></script>
+<script src="../static/js/common/bootstrap.min.js"></script>
+<script src="../static/js/common/wow.min.js"></script>
+<script src="../static/js/common/DongUI.js"></script>
+<script src="../static/js/page/user.js"></script>
+</html>

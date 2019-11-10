@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    //初始化wow.js
+    new WOW().init();
     //注册绑定分页器
     var total_page_number=parseInt($("#OrderList").find(".DPage").attr("data-total"));
     dPageInitialize("OrderList",total_page_number);
@@ -254,7 +256,7 @@ function addFoodItemToBuyCart(food_item) {
 
 function addFoodItemToList(food_item) {
     $(".food-list").eq(0).append(
-        "<div data-food-itemid='"+food_item.id+"' class=\"col-sm-12 col-md-6 col-lg-4 food-list-item\">\n" +
+        "<div data-food-itemid='"+food_item.id+"' class=\"col-sm-12 col-md-6 col-lg-4 food-list-item wow bounceInUp\">\n" +
         "                        <div class=\"card\">\n" +
         "                            <div class=\"card-body\">\n" +
         "                                <div class=\"row\">\n" +
