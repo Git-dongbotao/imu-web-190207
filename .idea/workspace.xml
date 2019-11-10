@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b240f08-4049-4165-8284-f0ece9e11d7c" name="Default" comment="完成了整个商家页面及其交互，修改了一些样式">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/background/userbg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/background/userbg2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/images/background/userbg3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/animate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/user.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/common/wow.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/page/user.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/user.html" />
+    <list default="true" id="5b240f08-4049-4165-8284-f0ece9e11d7c" name="Default" comment="完成了用户界面，没有完成交互，至此，前端页面样式布局全部完成，接下来是整合作业">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/DongUI.css" afterPath="$PROJECT_DIR$/static/css/DongUI.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/dong-ui.css" afterPath="$PROJECT_DIR$/static/css/dong-ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/search-restaurant.css" afterPath="$PROJECT_DIR$/static/css/search-restaurant.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/common/DongUI.js" afterPath="$PROJECT_DIR$/static/js/common/DongUI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/page/restaurant.js" afterPath="$PROJECT_DIR$/static/js/page/restaurant.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/distributor-new.html" afterPath="$PROJECT_DIR$/templates/distributor-new.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/restaurant.html" afterPath="$PROJECT_DIR$/templates/restaurant.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/search-restaurant.html" afterPath="$PROJECT_DIR$/templates/search-restaurant.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -353,7 +336,7 @@
       <workItem from="1573353797928" duration="4655000" />
       <workItem from="1573359354095" duration="16129000" />
       <workItem from="1573377671737" duration="23000" />
-      <workItem from="1573377707056" duration="2082000" />
+      <workItem from="1573377707056" duration="2156000" />
     </task>
     <task id="LOCAL-00002" summary="修改了项目结构">
       <created>1572791248664</created>
@@ -411,11 +394,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573115270894</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="完成了用户界面，没有完成交互，至此，前端页面样式布局全部完成，接下来是整合作业">
+      <created>1573379866479</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1573379866479</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107031000" />
+    <option name="totallyTimeSpent" value="107105000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -480,7 +470,8 @@
     <MESSAGE value="修改了分页器处理table，并写了注释以供学习" />
     <MESSAGE value="创建了商家页面，修改了部分样式" />
     <MESSAGE value="完成了整个商家页面及其交互，修改了一些样式" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了整个商家页面及其交互，修改了一些样式" />
+    <MESSAGE value="完成了用户界面，没有完成交互，至此，前端页面样式布局全部完成，接下来是整合作业" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了用户界面，没有完成交互，至此，前端页面样式布局全部完成，接下来是整合作业" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -656,6 +647,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-250">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
