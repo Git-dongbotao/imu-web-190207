@@ -68,7 +68,7 @@ a:hover:after,a.selected:after{
     height: 30px;
     line-height: 30px;
 }
-.dui.header-navigation li a:link{
+.dui.header-navigation.bg-transparent li a:link{
     color: white;
 }
 
